@@ -1,5 +1,5 @@
 # Toggl Choose Project
-Simple utility to select a project and start tracking it using Toggl Track
+A simple utility to select a project and start tracking it using Toggl Track
 
 ## Requirements
  * [toggl-cli](https://github.com/AuHau/toggl-cli)
