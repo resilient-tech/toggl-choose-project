@@ -1,11 +1,11 @@
 # Toggl Starter Utility
 
-## Requirement:
+## Requirements
  * zenity
  * toggl-cli
  * notify-send
 
-## Installation:
+## Installation
 
 ### Install gnome untilities: zenity and notify-send
 
@@ -15,8 +15,14 @@ sudo apt-get install zenity
 apt-get install libnotify-bin
 ```
 
-### Install toggl-cli:
+### Install toggl-cli
 
 ```bash
 pip install togglCli
+```
+
+## Run
+
+```bash
+python3 start.py
 ```
