@@ -7,7 +7,7 @@
 
 ## Installation
 
-### Install gnome untilities: zenity and notify-send
+### Install gnome utilities: zenity and notify-send
 
 #### ubuntu
 ```bash 
