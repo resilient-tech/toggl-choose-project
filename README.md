@@ -9,6 +9,9 @@ Simple utility to select a project and start tracking it using Toggl Track
 ## Installation
 
 1. Clone this repo
+   ```bash
+   git clone https://github.com/resilient-tech/toggl-choose-project.git
+   ```
 
 
 1. Install toggl-cli
@@ -23,5 +26,5 @@ Simple utility to select a project and start tracking it using Toggl Track
 
 1. Run
     ```bash
-    python3 start.py
+    python3 toggle-choose-project/
     ```
