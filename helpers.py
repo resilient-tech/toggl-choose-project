@@ -6,7 +6,11 @@ def show_question_dialog(text=""):
     dialog_bash = [
         "zenity",
         "--question",
-        f"--text='{text}'",
+        "--title=Warning",
+        f"--text={text}",
+        "--icon-name=dialog-warning",
+        "--width=300",
+        "--height=200",
     ]
     reponse = subprocess.run(dialog_bash)
     return True if reponse.returncode == 0 else False
@@ -18,8 +22,10 @@ def show_select_project_dialog():
     dialog_bash = [
         "zenity",
         "--list",
-        "--title='Choose the project you want to work on'",
+        "--title=Choose Project",
         "--column=Project Name",
+        "--width=400",
+        "--height=400",
     ]
 
     for project in all_projects:
