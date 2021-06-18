@@ -19,12 +19,13 @@ def show_select_project_dialog():
         "zenity",
         "--list",
         "--title='Choose the project you want to work on'",
-        "--column='Project Name'",
-        "--column='Is Active'",
+        "--column=Project Name",
     ]
 
-    for index, project in enumerate(all_projects):
-        dialog_bash.extend([project.name, str(project.active)])
+    for project in all_projects:
+        if not project.active:
+            continue
+        dialog_bash.append(project.name)
 
     reponse = subprocess.run(dialog_bash, capture_output=True, text=True)
 
