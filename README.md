@@ -23,8 +23,11 @@ A simple utility to select a project and start tracking it using Toggl Track
     sudo apt-get install zenity
     sudo apt-get install libnotify-bin
     ```
-
-1. Run
+1. Configure Toggl CLI
+    ```bash
+    toggl me
+    ```
+2. Run
     ```bash
     python3 toggle-choose-project/
     ```
