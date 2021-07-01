@@ -4,7 +4,7 @@ from os import path
 from toggl import api, exceptions
 import pathlib
 
-CACHE_FILE_PATH = path.join(str(pathlib.Path().resolve()), "projects.json")
+CACHE_FILE_PATH = path.join(path.dirname(path.abspath(__file__)), "projects.json")
 
 
 def show_message_dialog(title, text, type):
@@ -24,8 +24,7 @@ def show_message_dialog(title, text, type):
 
 
 def cache_projects():
-    print("Network Call")
-    try:
+    try:	
         projects = api.Project.objects.all()
         projects = [project.name for project in projects if project.active]
         content = {"current_project": None, "projects": projects}
