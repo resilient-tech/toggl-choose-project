@@ -18,13 +18,14 @@ def show_message_dialog(title, text, type):
         "--icon-name=dialog-warning",
         "--width=300",
         "--height=200",
+        "--html",
     ]
     reponse = subprocess.run(dialog_bash)
     return True if reponse.returncode == 0 else False
 
 
 def cache_projects():
-    try:	
+    try:
         projects = api.Project.objects.all()
         projects = [project.name for project in projects if project.active]
         content = {"current_project": None, "projects": projects}
@@ -134,3 +135,29 @@ def fetch_current_time_entry():
             """There is no authentication configuration found!\n\nRun 'toggl me' to configure the toggl.""",
             "error",
         )
+
+
+def show_input_dialog(title="", text=""):
+    dialog_bash = [
+        "zenity",
+        "--entry",
+        f"--title={title}",
+        f"--text={text}",
+        "--width=400",
+        "--height=200",
+    ]
+
+    return subprocess.run(dialog_bash, capture_output=True, text=True)
+
+
+def stop_current_time_entry(time_entry, description=" "):
+    if not time_entry.is_running:
+        return
+
+    time_entry.description = description
+
+    time_entry.stop_and_save()
+    show_notification(
+        "Time tracking stopped",
+        f"Time tracking stopped for the project: '{time_entry.project.name}'",
+    )
