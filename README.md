@@ -31,3 +31,5 @@ A simple utility to select a project and start tracking it using Toggl Track
     ```bash
     python3 toggle-choose-project/
     ```
+## Todo
+* [ ] Add cross-platform support
