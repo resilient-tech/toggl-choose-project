@@ -29,7 +29,12 @@ A simple utility to select a project and start tracking it using Toggl Track
     ```
 2. Run
     ```bash
+    # Start the timer
     python3 toggle-choose-project/
+    
+    # Stop the timer
+    python3 toggle-choose-project/stop.py
     ```
+**Pro tip**: set the shortcuts for the run commands
 ## Todo
 * [ ] Add cross-platform support
